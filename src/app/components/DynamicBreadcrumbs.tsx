@@ -1,22 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import useAlbums from '../albums/useAlbums';
-import Alert from '@mui/material/Alert';
-import { AlertTitle, Box, Skeleton } from '@mui/material';
-import { Album } from '../albums/Album';
-import { CardActionArea } from '@mui/material';
+import { Box } from '@mui/material';
 import { usePathname, useRouter } from 'next/navigation';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';

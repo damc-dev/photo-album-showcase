@@ -1,11 +1,8 @@
 
-import Image from 'next/image'
 import styles from './page.module.css'
 import Box from '@mui/material/Box'
-import { Breadcrumbs, Button, Container, Stack, Typography } from '@mui/material'
+import { Button, Container, Stack, Typography } from '@mui/material'
 import Link from 'next/link'
-import DynamicBreadcrumbs from './components/DynamicBreadCrumbs'
-
 export default function Home() {
   return (
     <main className={styles.main}>
