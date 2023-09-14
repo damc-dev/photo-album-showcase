@@ -20,7 +20,7 @@ import { CardActionArea } from '@mui/material';
 import { usePathname, useRouter } from 'next/navigation';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
-import NextBreadcrumbs from '../components/BreadCrumb';
+import DynamicBreadcrumbs from '../components/DynamicBreadCrumbs';
 
 
 function AlbumElem({ index, album }: { index: number, album: Album }) {
@@ -52,7 +52,7 @@ export default function Page({ params }: { params: { id: number } }) {
   return (
     <Container sx={{ py: 3 }} maxWidth="lg">
 
-      <NextBreadcrumbs></NextBreadcrumbs>
+      <DynamicBreadcrumbs></DynamicBreadcrumbs>
 
     <Grid container spacing={1} data-testid="album-grid" >
       {(isLoading || !albums ? Array.from(new Array(10)) : albums).map((album: Album, index: number) => {

@@ -40,7 +40,7 @@ function Crumb({ text, href, last=false, onClick=defaultOnClick}: { text: string
   );
 }
 
-export default function NextBreadcrumbs() {
+export default function DynamicBreadcrumbs() {
   // Gives us ability to load the current route details
   const router = useRouter();
 
@@ -74,16 +74,9 @@ export default function NextBreadcrumbs() {
 
   // Call the function to generate the breadcrumbs list
   const breadcrumbs = generateBreadcrumbs();
-  // return (
-  //   <Breadcrumbs aria-label="breadcrumb" />
-  // );
   return (
     <Box sx={{ mb: 4}}>
     <Breadcrumbs data-testid="breadcrumbs">
-      {/*
-        Iterate through the crumbs, and render each individually.
-        We "mark" the last crumb to not have a link.
-      */}
       {breadcrumbs.map((crumb, idx) => (
         <Crumb {...crumb} key={idx} last={idx === breadcrumbs.length - 1} data-testid={`breadcrumb-${idx}`} />
       ))}

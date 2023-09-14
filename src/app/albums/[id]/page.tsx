@@ -33,7 +33,7 @@ import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import { useRouter } from 'next/navigation';
-import NextBreadcrumbs from '../../components/BreadCrumb';
+import DynamicBreadcrumbs from '../../components/DynamicBreadCrumbs';
 
 
 function PhotoElem({ index, photo }: { index: number, photo: Photo }) {
@@ -126,7 +126,7 @@ export default function Page({ params }: { params: { id: number } }) {
   const handleClose = () => setfocusedImage(undefined);
   return (
     <Container sx={{ py: 3 }} maxWidth="lg">
-      <NextBreadcrumbs/>
+      <DynamicBreadcrumbs/>
       <Typography variant="h3" sx={{ mt: 0, mb: 4 }}>
         {albums ? albums?.find((album) => album.id == params.id)?.title : ""}
       </Typography>

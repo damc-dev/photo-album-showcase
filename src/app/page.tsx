@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import Box from '@mui/material/Box'
 import { Breadcrumbs, Button, Container, Stack, Typography } from '@mui/material'
 import Link from 'next/link'
-import NextBreadcrumbs from './components/BreadCrumb'
+import DynamicBreadcrumbs from './components/DynamicBreadCrumbs'
 
 export default function Home() {
   return (
