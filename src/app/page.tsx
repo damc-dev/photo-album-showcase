@@ -14,7 +14,7 @@ export default function Home() {
             pb: 6,
           }}
         >
-          <Container maxWidth="sm">
+          <Container maxWidth="md">
             <Typography
               component="h1"
               variant="h2"
@@ -22,10 +22,10 @@ export default function Home() {
               color="text.primary"
               gutterBottom
             >
-              Photo Album Showcase
+             Welcome to the Photo Album Showcase!
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              This is an example project to show my skills
+            This Next.js application, written in TypeScript, is designed to provide a beautiful and user-friendly way to showcase photo albums as well as what I can develop given a prompt and a few hours.
             </Typography>
              <Stack
               sx={{ pt: 4 }}
@@ -36,8 +36,8 @@ export default function Home() {
               <Link href="/albums" passHref>
               <Button variant="contained">Go to Albums</Button>
               </Link>
-              <Link href="https://github.com/damc-dev" target="_blank" rel="noopener noreferrer" passHref>
-              <Button variant="outlined">View Source</Button>
+              <Link href="https://github.com/damc-dev/photo-album-showcase" target="_blank" rel="noopener noreferrer" passHref>
+              <Button variant="outlined">Learn More</Button>
               </Link>
             </Stack>
           </Container>
