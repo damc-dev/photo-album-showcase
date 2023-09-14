@@ -62,7 +62,7 @@ function Sidebar() {
         <List>
           {LINKS.map(({ text, href, icon: Icon }) => (
             <ListItem key={href} disablePadding>
-              <ListItemButton component={Link} href={href}>
+              <ListItemButton component={Link} href={href} data-testid={`sidebar-nav-${text.toLowerCase()}`}>
                 <ListItemIcon>
                   <Icon />
                 </ListItemIcon>
@@ -94,22 +94,22 @@ function MyAppBar() {
     <AppBar position="fixed" sx={{ zIndex: 2000 }}>
       <Toolbar sx={{ backgroundColor: 'background.paper' }}>
         <DashboardIcon sx={{ color: '#444', mr: 2, transform: 'translateY(-2px)' }} />
-        <Link href="/">
+        <Link href="/" data-testid="appbar-nav-home">
 
-        <Typography variant="h6" noWrap component="div" sx={{
-          flexGrow: 0, display: { xs: 'flex', md: 'flex' },
-          fontFamily: 'Helvetica', mr: 2,
-          fontWeight: 700,
-          color: 'inherit',
-          textDecoration: 'none',
+          <Typography variant="h6" noWrap component="div" sx={{
+            flexGrow: 0, display: { xs: 'flex', md: 'flex' },
+            fontFamily: 'Helvetica', mr: 2,
+            fontWeight: 700,
+            color: 'inherit',
+            textDecoration: 'none',
 
-        }} >
-          Photo Album Showcase
-        </Typography>
+          }} >
+            Photo Album Showcase
+          </Typography>
         </Link>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           {LINKS.map(({ text, href, icon: Icon }) => (
-            <Button key={href} href={href} sx={{ color: '#fff' }}>
+            <Button key={href} href={href} sx={{ color: '#fff' }} data-testid={`appbar-nav-${text.toLowerCase()}`}>
               {text}
             </Button>
           ))}

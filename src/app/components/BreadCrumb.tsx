@@ -29,12 +29,12 @@ const defaultOnClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => 
 function Crumb({ text, href, last=false, onClick=defaultOnClick}: { text: string, href: string, last?: boolean, onClick?: OnClickType}) {
   // The last crumb is rendered as normal text since we are already on the page
   if (last) {
-    return <Typography  variant="h3" color="text.primary">{text}</Typography>
+    return <Typography data-testid="breadcrumb-current" variant="h3" color="text.primary">{text}</Typography>
   }
 
   // All other crumbs will be rendered as links that can be visited 
   return (
-    <Link  variant="h3" underline="hover" color="inherit" href={href}>
+    <Link  variant="h3" underline="hover" color="inherit" href={href} data-testid="breadcrumb-previous">
       {text}
     </Link>
   );
@@ -79,13 +79,13 @@ export default function NextBreadcrumbs() {
   // );
   return (
     <Box sx={{ mb: 4}}>
-    <Breadcrumbs>
+    <Breadcrumbs data-testid="breadcrumbs">
       {/*
         Iterate through the crumbs, and render each individually.
         We "mark" the last crumb to not have a link.
       */}
       {breadcrumbs.map((crumb, idx) => (
-        <Crumb {...crumb} key={idx} last={idx === breadcrumbs.length - 1} />
+        <Crumb {...crumb} key={idx} last={idx === breadcrumbs.length - 1} data-testid={`breadcrumb-${idx}`} />
       ))}
     </Breadcrumbs>
     </Box>

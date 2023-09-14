@@ -95,7 +95,8 @@ function PhotoElem({ index, photo }: { index: number, photo: Photo }) {
 export default function Page({ params }: { params: { id: number } }) {
   const { photos, isError, isLoading } = useAlbumPhotos(params.id)
   const { albums, isError: isAlbumError, isLoading: isAlbumLoading } = useAlbums(1)
-
+  const lg = useMediaQuery('(min-width:1200px)');
+  const md = useMediaQuery('(min-width:1000px)');
   console.log(albums)
 
   const [focusedImage, setfocusedImage] = React.useState<Photo>();
@@ -103,8 +104,7 @@ export default function Page({ params }: { params: { id: number } }) {
     <AlertTitle>Error</AlertTitle>
     {isError}
   </Alert>)
-  const lg = useMediaQuery('(min-width:1200px)');
-  const md = useMediaQuery('(min-width:1000px)');
+
   let cols = 1
   if (lg) {
     cols=3

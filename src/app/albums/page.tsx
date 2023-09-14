@@ -54,10 +54,10 @@ export default function Page({ params }: { params: { id: number } }) {
 
       <NextBreadcrumbs></NextBreadcrumbs>
 
-    <Grid container spacing={1} >
+    <Grid container spacing={1} data-testid="album-grid" >
       {(isLoading || !albums ? Array.from(new Array(10)) : albums).map((album: Album, index: number) => {
         return (
-          <Grid item key={index} xs={12} sm={6} md={4}>
+          <Grid item key={index} xs={12} sm={6} md={4} data-testid="album-grid-item">
           <AlbumElem album={album} index={index} />
           </Grid>)
       })}
