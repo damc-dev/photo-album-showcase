@@ -79,11 +79,11 @@ Here's a screenshot of the application's home page:
 
 ![Home Page](/images/homepage.png)
 
-Here's how the albums appears:
+Here's how the albums page:
 
 ![Album View](/images/albumspage.png)
 
-And here's the view of an album:
+Here's the view of an album:
 
 ![Album View](/images/albumview.png)
 
@@ -92,7 +92,7 @@ And here's the photo view:
 ![Album View](/images/photoview.png)
 
 
-Feel free to explore the application and enjoy the lovely placeholder photo albums!
+Wow your still here, what a journey.  Feel free to explore the application and enjoy the lovely placeholder photo albums!
 
 ## Skills Utilized
 
