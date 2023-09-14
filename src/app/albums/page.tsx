@@ -12,8 +12,7 @@ import { AlertTitle, Skeleton } from '@mui/material';
 import { Album } from './Album';
 import { CardActionArea } from '@mui/material';
 import { useRouter } from 'next/navigation';
-import DynamicBreadcrumbs from '../components/DynamicBreadCrumbs';
-
+import DynamicBreadcrumbs from '../components/DynamicBreadcrumbs';
 
 function AlbumElem({ index, album }: { index: number, album: Album }) {
   const router = useRouter()

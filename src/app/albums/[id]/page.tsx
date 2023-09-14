@@ -1,83 +1,19 @@
 'use client';
 
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import { Photo } from './Photo';
-import Skeleton from '@mui/material/Skeleton';
 import useAlbumPhotos from './useAlbumPhotos';
 import useAlbums from '../useAlbums';
-import { CardActionArea, Modal, useMediaQuery } from '@mui/material';
+import { Modal, useMediaQuery } from '@mui/material';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import { useRouter } from 'next/navigation';
 import DynamicBreadcrumbs from '../../components/DynamicBreadCrumbs';
-
-
-function PhotoElem({ index, photo }: { index: number, photo: Photo }) {
-  const router = useRouter()
-  return (
-    <Card
-
-      sx={{ maxWidth: 300, height: '100%', display: 'flex', flexDirection: 'column' }}
-    >
-      {photo ? (
-        <CardActionArea onClick={() => console.log('click')}>
-          <CardMedia component="div"
-            sx={{ pt: '56.25%' }}
-            image={photo.thumbnailUrl}
-          />
-          <CardContent sx={{ flexGrow: 1 }}>
-            <Typography gutterBottom>
-              {photo.title}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">View</Button>
-            <Button size="small">Edit</Button>
-          </CardActions>
-        </CardActionArea>
-      ) : <Skeleton variant="rectangular" height={300} width="100%" />}
-    </Card>
-  )
-}
-
-// export default function Page({ params }: { params: { id: number } }) {
-//   const { photos, isError, isLoading } = useAlbumPhotos(params.id)
-//   const { albums, isError: isAlbumError, isLoading: isAlbumLoading} = useAlbums(1)
-
-//   console.log(albums)
-
-//   if (isError) return (<Alert severity="error">
-//     <AlertTitle>Error</AlertTitle>
-//     {isError}
-//   </Alert>)
-
-//   return (
-//     <Container sx={{ py: 3 }} maxWidth="lg">
-//             <Typography variant="h3" sx={{mt: 0, mb: 4 }}>
-//             {albums ? albums?.find((album) => album.id == params.id)?.title : ""}
-//             </Typography>
-//     <Grid container spacing={1} >
-//       {(isLoading || !photos ? Array.from(new Array(10)) : photos).map((photo: Photo, index: number) => {
-//         return (
-//           <Grid item key={index} xs={12} sm={6} md={4}>
-//           <PhotoElem photo={photo} index={index} />
-//           </Grid>)
-//       })}
-//     </Grid>
-//     </Container>
-//   )
-// }
 
 export default function Page({ params }: { params: { id: number } }) {
   const { photos, isError, isLoading } = useAlbumPhotos(params.id)
@@ -104,7 +40,6 @@ export default function Page({ params }: { params: { id: number } }) {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-   // minWidth: 600,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -137,7 +72,8 @@ export default function Page({ params }: { params: { id: number } }) {
       </Modal>
       <ImageList sx={{ height: '100%' }} cols={cols}>
         {(isLoading || !photos ? Array.from(new Array(10)) : photos).map((photo: Photo | null) => (
-          <ImageListItem key={photo?.id} sx={{width:300}} onClick={() => setfocusedImage(photo || undefined)}>
+          //@ts-ignore
+          <ImageListItem key={photo?.id || photo} sx={{width:300}} onClick={() => setfocusedImage(photo || undefined)}>
             <img
               src={photo?.thumbnailUrl}
               srcSet={photo?.thumbnailUrl}
