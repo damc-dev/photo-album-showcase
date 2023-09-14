@@ -13,7 +13,7 @@ import { Modal, useMediaQuery } from '@mui/material';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import DynamicBreadcrumbs from '../../components/DynamicBreadCrumbs';
+import DynamicBreadcrumbs from '../../components/DynamicBreadcrumbs';
 
 export default function Page({ params }: { params: { id: number } }) {
   const { photos, isError, isLoading } = useAlbumPhotos(params.id)
