@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Welcome to the Photo Album Showcase! This Next.js application, written in TypeScript, is designed to provide a beautiful and user-friendly way to showcase photo albums.
+Welcome to the Photo Album Showcase! This Next.js application, written in TypeScript, is designed to provide a beautiful and user-friendly way to showcase photo albums as well as what I can develop given a prompt and a few hours.
 
 It currently uses the [{JSON} Placeholder](https://jsonplaceholder.typicode.com/) API's provided by Typecode to retrieve placeholder albums and photos.
 
