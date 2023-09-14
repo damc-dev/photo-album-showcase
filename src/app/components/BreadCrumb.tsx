@@ -1,0 +1,93 @@
+'use client';
+
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import CameraIcon from '@mui/icons-material/PhotoCamera';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import useAlbums from '../albums/useAlbums';
+import Alert from '@mui/material/Alert';
+import { AlertTitle, Box, Skeleton } from '@mui/material';
+import { Album } from '../albums/Album';
+import { CardActionArea } from '@mui/material';
+import { usePathname, useRouter } from 'next/navigation';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+
+type OnClickType = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+
+const defaultOnClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => { event.preventDefault()}
+
+// Each individual "crumb" in the breadcrumbs list
+function Crumb({ text, href, last=false, onClick=defaultOnClick}: { text: string, href: string, last?: boolean, onClick?: OnClickType}) {
+  // The last crumb is rendered as normal text since we are already on the page
+  if (last) {
+    return <Typography  variant="h3" color="text.primary">{text}</Typography>
+  }
+
+  // All other crumbs will be rendered as links that can be visited 
+  return (
+    <Link  variant="h3" underline="hover" color="inherit" href={href}>
+      {text}
+    </Link>
+  );
+}
+
+export default function NextBreadcrumbs() {
+  // Gives us ability to load the current route details
+  const router = useRouter();
+
+  const pathname = usePathname()
+
+  function generateBreadcrumbs() {
+    // Remove any query parameters, as those aren't included in breadcrumbs
+    const asPathWithoutQuery = pathname.split("?")[0];
+
+    // Break down the path between "/"s, removing empty entities
+    // Ex:"/my/nested/path" --> ["my", "nested", "path"]
+    const asPathNestedRoutes = asPathWithoutQuery.split("/")
+                                                 .filter((v: string) => v.length > 0);
+
+    // Iterate over the list of nested route parts and build
+    // a "crumb" object for each one.
+    const crumblist = asPathNestedRoutes.map((subpath: string, idx: number) => {
+      // We can get the partial nested route for the crumb
+      // by joining together the path parts up to this point.
+      const href = "/" + asPathNestedRoutes.slice(0, idx + 1).join("/");
+      // The title will just be the route string for now
+      const text = subpath.charAt(0).toUpperCase()
+      + subpath.slice(1);
+      
+      return { href, text }; 
+    })
+
+    // Add in a default "Home" crumb for the top-level
+    return [{ href: "/", text: "Home"  }, ...crumblist];
+  }
+
+  // Call the function to generate the breadcrumbs list
+  const breadcrumbs = generateBreadcrumbs();
+  // return (
+  //   <Breadcrumbs aria-label="breadcrumb" />
+  // );
+  return (
+    <Box sx={{ mb: 4}}>
+    <Breadcrumbs>
+      {/*
+        Iterate through the crumbs, and render each individually.
+        We "mark" the last crumb to not have a link.
+      */}
+      {breadcrumbs.map((crumb, idx) => (
+        <Crumb {...crumb} key={idx} last={idx === breadcrumbs.length - 1} />
+      ))}
+    </Breadcrumbs>
+    </Box>
+  );
+}
