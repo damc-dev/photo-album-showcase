@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "sst bind next dev",
+    "dev:local": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -30,7 +31,11 @@
     "swr": "^2.2.2"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "aws-cdk-lib": "2.95.1",
+    "constructs": "10.2.69",
     "cypress": "^13.2.0",
+    "sst": "^2.25.2",
     "start-server-and-test": "^2.0.0",
     "typescript": "^5.2.2"
   }
