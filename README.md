@@ -9,6 +9,8 @@
 
 Welcome to the Photo Album Showcase! This Next.js application, written in TypeScript, is designed to provide a beautiful and user-friendly way to showcase photo albums as well as an example of what I can develop given a prompt and a few hours.
 
+**View it live: [photos.damc-dev.com](https://photos.damc-dev.com)**
+
 It currently uses the [{JSON} Placeholder](https://jsonplaceholder.typicode.com/) API's provided by Typecode to retrieve placeholder albums and photos.
 
 The application was built with Typescript and leverages Next.js 13 and the power of SSR with their new App Router. 
@@ -33,6 +35,7 @@ The project is open source and licensed under the MIT License.
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
 ## Installation
 
 To get started with the Photo Album Showcase Application, follow these steps:
@@ -75,7 +78,7 @@ Currently only have end-to-end testing with Cypress, but have plans to add furth
 
 It is configured to deploy to AWS Cloudfront and AWS Lambda using [SST](https://sst.dev/)
 
-1. **Dependencies**: Ensure you have the AWS CLI installed and are logged in to your account
+1. **Prerequisites**: Ensure you have the AWS CLI installed and are logged in to your account
 
 2. **Deploy**
     ```shell
@@ -91,7 +94,7 @@ Once the application is running, you can easily navigate between photo albums an
 - **Album View**: Click on an album to see its contents.
 - **Photo View**: Click on a photo to view it in full size.
 
-You can view it live at (photos.damc-dev.com)
+**Try it out: [photos.damc-dev.com](https://photos.damc-dev.com)**
 
 Here's a screenshot of the application's home page:
 
@@ -134,8 +137,6 @@ We believe in continuous improvement and welcome contributions from the communit
 - Implement continuous integration and continuous deployment pipelines.
 
 - Enhance security practices and implement security testing.
-
-- Automate infrastructure provisioning with Infrastructure as Code
 
 - Add additional testing to ensure maintaibility and catch errors before they are deployed.  Such as: Component Testing, Integration Testing, Unit Testing, and Performance Testing
 
