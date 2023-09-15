@@ -25,7 +25,7 @@ export default function Home() {
              Welcome to the Photo Album Showcase!
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-            This Next.js application, written in TypeScript, is designed to provide a beautiful and user-friendly way to showcase photo albums as well as what I can develop given a prompt and a few hours.
+            This Next.js application, written in TypeScript, is designed to provide a beautiful and user-friendly way to showcase photo albums as well as an example of what I can develop given a prompt and a few hours.
             </Typography>
              <Stack
               sx={{ pt: 4 }}
