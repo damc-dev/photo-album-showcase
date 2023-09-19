@@ -38,4 +38,4 @@ Amazon Web Services (AWS) was chosen for deployment due to its reliability, scal
 
 The chosen technologies collectively contribute to the development of a polished, efficient, and user-friendly Photo Album Showcase application. The selection was based on the specific requirements of the project, aiming to deliver a high-quality showcase within the given time frame.
 
-**For more details on the architecture see [Architecture Overview](/docs/ARCHITECTURE.md)**
+**For more details on the architecture see [Architecture Overview](docs/ARCHITECTURE.md)**
