@@ -40,7 +40,7 @@ The project is open source and licensed under the MIT License.
 
 To get started with the Photo Album Showcase Application, follow these steps:
 
-1. **Prerequisites**: Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
+1. **Prerequisites**: Ensure you have [Node.js](https://nodejs.org/) and the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) installed on your machine and you are able to access your AWS account.  
 
 2. **Clone the Repository**: Clone this repository to your local machine using the following command:
    ```shell
@@ -52,13 +52,29 @@ To get started with the Photo Album Showcase Application, follow these steps:
    cd photo-album-showcase
    npm install
    ```
+## Running the Application
 
-4. **Start the Application**: Start the development server:
+### Running local only (No AWS Access required)
+
+1. **Start the arontend application**: Start the development server:
+    ```shell
+    npm run dev:local
+    ```
+2. **Access the Application**: Open your web browser and visit `http://localhost:3000` to use the application.
+
+### Running locally with AWS resource bindings
+
+1. **Start the local development environment**: The sst dev command starts a local development environment called [Live Lambda](https://docs.sst.dev/live-lambda-development), that connects directly to AWS. Letting you [set breakpoints and test your functions locally](https://docs.sst.dev/live-lambda-development#debugging-with-vs-code).
+    ```shell
+    npx sst dev
+    ```
+
+2. **Start the frontend application**: Now you can start your frontend in a seperate session. Under the hood it uses the [sst bind](https://docs.sst.dev/packages/sst#sst-bind) command to connect your frontend to the backend.
    ```shell
    npm run dev
    ```
 
-5. **Access the Application**: Open your web browser and visit `http://localhost:3000` to use the application.
+3. **Access the Application**: Open your web browser and visit `http://localhost:3000` to use the application.
 
 ## Testing
 
@@ -98,24 +114,32 @@ Once the application is running, you can easily navigate between photo albums an
 
 Here's a screenshot of the application's home page:
 
-![Home Page](/images/homepage.png)
+![Home Page](images/homepage.png)
 
 Here's how the albums page:
 
-![Album View](/images/albumspage.png)
+![Album View](images/albumspage.png)
 
 Here's the view of an album:
 
-![Album View](/images/albumview.png)
+![Album View](images/albumview.png)
 
 
 And here's the photo view:
-![Album View](/images/photoview.png)
+![Album View](images/photoview.png)
 
 
 Wow your still here, what a journey.  Feel free to explore the application and enjoy the lovely placeholder photo albums!
 
-## Skills Utilized
+## Architecture Overview
+
+The Photo Album Showcase web application is designed with a modern serverless architecture to ensure a smooth user experience and streamlined development and deployment processes. 
+
+![Architecture Diagram](/diagrams/architecture.png)
+
+:information_source: **For more details on the architecture decisions see [Architecture Overview](docs/ARCHITECTURE.md)**
+
+## Technology Choices
 
 This project showcases the following skills and technologies:
 
@@ -127,6 +151,8 @@ This project showcases the following skills and technologies:
 - Cypress
 - [SST](https://sst.dev/)
 - AWS
+
+:information_source: **For more details on the rationale see [technology choices](docs/TECHNOLOGY.md)**
 
 ## Opportunities for Improvement
 
