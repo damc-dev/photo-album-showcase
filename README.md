@@ -115,7 +115,15 @@ And here's the photo view:
 
 Wow your still here, what a journey.  Feel free to explore the application and enjoy the lovely placeholder photo albums!
 
-## Skills Utilized
+## Architecture Overview
+
+The Photo Album Showcase web application is designed with a modern serverless architecture to ensure a smooth user experience and streamlined development and deployment processes. 
+
+![Architecture Diagram](/diagrams/architecture.png)
+
+**For more details on the architecture decisions see [Architecture Overview](/docs/ARCHITECTURE.md)**
+
+## Technology Choices
 
 This project showcases the following skills and technologies:
 
@@ -127,6 +135,8 @@ This project showcases the following skills and technologies:
 - Cypress
 - [SST](https://sst.dev/)
 - AWS
+
+**For more details on the rationale see [technology choices](docs/TECHNOLOGY.md)**
 
 ## Opportunities for Improvement
 
