@@ -121,7 +121,7 @@ The Photo Album Showcase web application is designed with a modern serverless ar
 
 ![Architecture Diagram](/diagrams/architecture.png)
 
-**For more details on the architecture decisions see [Architecture Overview](/docs/ARCHITECTURE.md)**
+:information_source: **For more details on the architecture decisions see [Architecture Overview](/docs/ARCHITECTURE.md)**
 
 ## Technology Choices
 
@@ -136,7 +136,7 @@ This project showcases the following skills and technologies:
 - [SST](https://sst.dev/)
 - AWS
 
-**For more details on the rationale see [technology choices](docs/TECHNOLOGY.md)**
+:information_source: **For more details on the rationale see [technology choices](docs/TECHNOLOGY.md)**
 
 ## Opportunities for Improvement
 
